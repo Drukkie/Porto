@@ -1,222 +1,314 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-    scroll-behavior: smooth;
-}
-
-body {
-    overflow-x: hidden;
-}
-
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: white;
-    box-shadow: rgba(62, 62, 62, 0.427) 0 0 0.15em;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    text-transform: uppercase;
-    font-weight: 500;
-}
-
-header ul {
-    display: flex;
-    list-style: none;
-}
-
-header li {
-    margin-right: 20px;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-h1 {
-    position: absolute;
-    font-size: 9rem;
-    margin-left: 320px;
-    margin-top: 70px;
-    font-family: "Roboto", sans-serif;
-    font-weight: 1000;
-    text-transform: uppercase;
-    z-index: -100;
-}
-
-.mask-container {
-    display: flex;
-    align-items: left;
-    margin-top: 5%;
-    margin-bottom: 70px;
-}
-
-.robot {
-    width: 30%;
-    height: 500px;
-}
-
-.swiper-pagination {
-    opacity: 0.1;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-}
-
-.swiper-container {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 100px;
-}
-
-.swiper-container img {
-    width: 400px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin: 0 auto;
-}
-
-.swiper-container img:hover {
-    transform: scale(1.1);
-}
-
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    height: 100%;
-    transform: scale(0.8);
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    transition: 0.3s all;
-}
-
-.swiper-slide:not(.swiper-slide-prev):not(.swiper-slide-active):not(.swiper-slide-next) {
-    opacity: 0;
-}
-
-@keyframes bounceAnimation {
-    0% {
-        transform: scale(0.8) translateY(0);
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+        scroll-behavior: smooth;
     }
-    50% {
-        transform: scale(1.05) translateY(-10px);
+    
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #ffffff;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px;
+        width: 100%;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        padding: 15px 0;
     }
-    100% {
-        transform: scale(1) translateY(0);
+    
+    header ul {
+        display: flex;
+        list-style: none;
+        gap: 50px;
+        margin-left: 5%;
     }
-}
-
-.swiper-slide-active {
-    animation: bounceAnimation 0.6s ease-in-out;
-}
-
-.modal {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    z-index: 1000;
-    /* Ensure it appears above other elements */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Black background with opacity */
-    display: flex;
-    /* Use Flexbox for centering */
-    justify-content: center;
-    /* Center horizontally */
-    align-items: center;
-    /* Center vertically */
-    pointer-events: auto;
-    /* Allow interaction with the modal */
-}
-
-.modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 50%;
-    /* Adjust the width as needed */
-    max-width: 600px;
-    /* Ensure it doesn't exceed a maximum width */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    position: relative;
-    /* Ensure the close button is positioned correctly */
-    overflow-y: auto;
-    /* Allow scrolling inside the modal if content overflows */
-    max-height: 90vh;
-    /* Prevent the modal from exceeding the viewport height */
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-body.modal-open {
-    overflow: hidden;
-    /* Disable scrolling on the body */
-}
-
-footer {
-    background-color: white;
-    box-shadow: rgba(62, 62, 62, 0.427) 0 0 0.2em;
-    position: relative;
-    z-index: 10;
-    padding: 15px 20px;
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 600;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.footer-contact {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.social-links {
-    display: flex;
-    gap: 15px;
-}
-
-.social-links a img {
-    width: 2.5em;
-    height: auto;
-}
+    
+    header li {
+        font-size: 1.2rem;
+        ;
+    }
+    
+    header a {
+        text-decoration: none;
+        color: #333333;
+        transition: color 0.3s ease;
+    }
+    
+    header a:hover {
+        color: #007bff;
+    }
+    
+    h1 {
+        position: absolute;
+        font-size: 9rem;
+        margin-left: 320px;
+        margin-top: 70px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 1000;
+        text-transform: uppercase;
+        z-index: -100;
+    }
+    
+    .mask-container {
+        display: flex;
+        align-items: left;
+        margin-top: 5%;
+        margin-bottom: 11%;
+    }
+    
+    .robot {
+        width: 30%;
+        height: 500px;
+    }
+    
+    .swiper-pagination {
+        opacity: 0.1;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+    }
+    
+    .swiper-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .swiper-container {
+        width: 100%;
+        /* Adjust the width of the Swiper container */
+        max-width: 1600px;
+        /* Limit the maximum width */
+        margin: 0 auto;
+        /* Center the container horizontally */
+        position: relative;
+        /* Ensure proper positioning */
+        top: 50%;
+        /* Move the container to the middle of the page */
+        transform: translateY(-50%);
+    }
+    
+    .swiper-container img {
+        width: 400px;
+        border-radius: 10px;
+        margin: 0 auto;
+    }
+    
+    .swiper-container img:hover {
+        transform: scale(1.1);
+    }
+    
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    
+    .hidden {
+        opacity: 0;
+        transform: translateY(50px);
+        /* Slide it down slightly */
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        /* Smooth transition */
+    }
+    
+    .visible {
+        opacity: 1;
+        transform: translateY(0);
+        animation: bounceIn 1.2s ease-out;
+        /* Increase the duration to 1.2 seconds */
+        /* Trigger the bounce animation */
+    }
+    
+    @keyframes bounceIn {
+        0% {
+            transform: translateY(50px) scale(0.9);
+            opacity: 0;
+        }
+        20% {
+            opacity: 1;
+        }
+        50% {
+            transform: translateY(-10px) scale(1.05);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+    }
+    
+    .swiper-slide-active {
+        animation: bounceAnimation 0.6s ease-in-out;
+    }
+    
+    .swiper-slide-prev,
+    .swiper-slide-next {
+        transform: scale(0.9);
+        /* Slightly scale down adjacent slides */
+        z-index: 5;
+        /* Ensure they are behind the active slide */
+        opacity: 0.9;
+        /* Slightly dim adjacent slides */
+    }
+    
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: auto;
+    }
+    
+    .modal-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 1200px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        position: relative;
+        overflow-y: auto;
+        max-height: 90vh;
+        transform: scale(0.8);
+        /* Start smaller */
+        opacity: 0;
+        /* Start invisible */
+        animation: modalZoomIn 0.5s ease forwards;
+        /* Animate to full size */
+    }
+    
+    @keyframes modalZoomIn {
+        0% {
+            transform: scale(0.8);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    
+    .modal-content p {
+        padding-top: 2%;
+        padding-bottom: 2%;
+        width: 90%;
+        /* Set the width of the text to 80% of the modal */
+        margin: 0 auto;
+        /* Center the text horizontally */
+        text-align: left;
+        /* Optional: Align the text to the left */
+        line-height: 1.6;
+        /* Optional: Improve readability with line spacing */
+    }
+    
+    .modal-button-container {
+        text-align: left;
+        margin-left: 5%;
+    }
+    
+    .modal-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #000000;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+    
+    .modal-button:hover {
+        background-color: #575758;
+    }
+    
+    .modal-images {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        /* Add spacing between the images */
+        margin-top: 20px;
+        /* Add spacing between the text and images */
+    }
+    
+    .modal-image {
+        width: 45%;
+        /* Adjust the width of each image */
+        height: auto;
+        /* Maintain the aspect ratio */
+        border-radius: 10px;
+        /* Optional: Add rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        /* Optional: Add a shadow */
+    }
+    
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    body.modal-open {
+        overflow: hidden;
+        /* Disable scrolling on the body */
+    }
+    
+    footer {
+        background-color: white;
+        box-shadow: rgba(62, 62, 62, 0.427) 0 0 0.2em;
+        position: relative;
+        z-index: 10;
+        padding: 15px 20px;
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+    }
+    
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .footer-contact {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .social-links {
+        display: flex;
+        gap: 15px;
+    }
+    
+    .social-links a img {
+        width: 2.5em;
+        height: auto;
+    }
