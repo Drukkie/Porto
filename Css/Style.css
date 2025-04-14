@@ -64,6 +64,51 @@
         height: 500px;
     }
     
+    #about {
+        text-align: center;
+        width: 50%;
+        margin: 0 auto;
+        font-size: 3.2em;
+        margin-bottom: 10%;
+    }
+    /* Hidden state for the #about section */
+    
+    #about.hidden {
+        opacity: 0;
+        transform: translateY(50px);
+        /* Slide it down slightly */
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        /* Smooth transition */
+    }
+    /* Visible state for the #about section */
+    
+    #about.visible {
+        opacity: 1;
+        transform: translateY(0);
+        /* Reset position */
+        animation: bounceIn 1.2s ease-out;
+        /* Trigger the bounce animation */
+    }
+    /* Bounce-in animation */
+    
+    @keyframes bounceIn {
+        0% {
+            transform: translateY(50px) scale(0.9);
+            opacity: 0;
+        }
+        20% {
+            opacity: 1;
+        }
+        50% {
+            transform: translateY(-10px) scale(1.05);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+    }
+    
     .swiper-pagination {
         opacity: 0.1;
         bottom: 10px;
@@ -89,6 +134,7 @@
         top: 50%;
         /* Move the container to the middle of the page */
         transform: translateY(-50%);
+        margin-bottom: 10%;
     }
     
     .swiper-container img {
